@@ -1,79 +1,63 @@
-# Production Engineering - Week 1 - Portfolio Site
+### Inspiration 👾
+Our group is called Reboot Rebels but we've designed the web app as a reflection of our own pod name, Cyber Sapiens. To provide an immersive feel, a video of a humanoid figure on the homepage greets visitors. Alongside a sleek and minimalistic design, the theme across the website is futuristic as reflected by the fonts and colour schemes.
 
-Welcome to the MLH Fellowship! During Week 1, you'll be working with Flask to build a portfolio site. This site will be the foundation for activities we do in future weeks so spend time this week making it your own and reflect your personality!
+### What it does
+Please find below a summary of some of the key features of our site:
 
-## Tasks
+We have included details about who we are, what we do, where we study, and what we like to do in our spare time for those who would like to learn more about us
 
-Once you've got your portfolio downloaded and running using the instructions below, you should attempt to complete the following tasks.
+We have also included an interactive map of places around the world that we've visited so that you can see where we’ve been!
 
-For each of these tasks, you should create an [Issue](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues) and work on them in a new [branch](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-branches). When the task has been completed, you should open a [Pull Request](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests) and get another fellow in your pod to give you feedback before merging it in.
+### How we built it 🏗️
+We built the website using Flask for the backend, HTML/CSS for the frontend and JSON data files as well as pulling Google Maps API data. We collaborated over Github and discord to communicate and review each other’s commits to approve pull requests.
 
-*Note: Make sure to include a link to the Issue you're working on inside of your Pull Request so your reviewer knows what you're working on!*
+### Challenges we ran into 😓
+Planning for a responsive site design was a challenge, as we had to think about how to optimize the code and make sure that everything would work on all screen sizes.
 
-### GitHub Tasks
-- [x] Create Issues for each task below
-- [x] Work on each task in a new branch
-- [x] Open a Pull Request when a task is finished to get feedback
+We had to focus on the layout and make sure that it looked appealing to different user personas, rather than just showing off our work. It was important to keep in mind that we want other pod members to see our progress within this project and make it scalable to build upon in the future.
 
-### Portfolio Tasks
-- [x] Add a photo of yourself to the website
-- [x] Add an "About youself" section to the website.
-- [x] Add your previous work experiences
-- [x] Add your hobbies (including images)
-- [x] Add your current/previous education
-- [x] Add a map of all the cool locations/countries you visited
+### Accomplishments that we're proud of 🍾
+Rendering the Google Maps Interactive Layout
 
-### Flask Tasks
-- [x] Get your Flask app running locally on your machine using the instructions below.
-- [x] Add a template for adding multiple work experiences/education/hobbies using [Jinja](https://jinja.palletsprojects.com/en/3.0.x/api/#basics)
-- [x] Create a new page to display hobbies.
-- [x] Add a menu bar that dynamically displays other pages in the app
+Creating a fully functional full-stack web application using flask despite the short timeframe
 
+Applying all expected Git/Github best practices in a constructive and collaborative manner
 
-## Getting Started
+### What we learned 💡
+🛠️ Backend
+Creating a file structure that works with the Jinja2 template engine
 
-You don't need to submit any pull requests to thie repository. You need to do all your work here.
+Using template inheritance to share data across multiple web pages
 
-## Installation
+Rendering web pages and sharing json data through flask for use within templates
 
-Make sure you have python3 and pip installed
+Pulling data from the Google Maps API
 
-Create and activate virtual environment using virtualenv
-```bash
-$ python -m venv python3-virtualenv
-$ source python3-virtualenv/bin/activate
-```
+### 🖥️ Frontend
+Wireframing and prototyping using Figma.
 
-Use the package manager [pip](https://pip.pypa.io/en/stable/) to install all dependencies!
+Designing a cohesive, consistent and functional UI/UX.
 
-```bash
-pip install -r requirements.txt
-```
+### ⚙️ Git/Github best practices
+Utilising a Git collaboration workflow
 
-## Usage
+Creating issues to track tasks that require work
 
-Create a .env file using the example.env template (make a copy using the variables inside of the template)
+Developing each feature in a corresponding branch
 
-Start flask development server
-```bash
-$ export FLASK_ENV=development
-$ flask run
-```
+Implementing a code review process to commit work, and get feedback from project members
 
-You should get a response like this in the terminal:
-```
-❯ flask run
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
+### What's next for Reboot Rebels 🤖
+Implement more template inheritance throughout the website
 
-You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
+Add more functionality to our web apps with a database rather than JSON data files (Added IDs within current data files to make migration easier within a db schema)
 
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
+Add accessibility features to the web app while maintaining good design principles
 
-## Contributing
+### Built With
+css
+flask
+html
+javascript
+python
 
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
