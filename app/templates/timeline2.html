@@ -1,0 +1,77 @@
+{% extends "base.html" %} {% block head %}
+<title>Cyber Sapiens Timeline 2</title>
+<link
+  type="text/css"
+  href="{{url_for('static', filename='../static/styles/timeline.css')}}"
+  rel="stylesheet"
+/>
+{% endblock %} {% block content %}
+<body>
+  <form id="form">
+    <input name="username" type="text" />
+    <input name="password" type="password" />
+    <button type="submit">Submit</button>
+  </form>
+  <h1 id="users"></h1>
+  <!-- <table id="users"></table> -->
+
+  <script>
+    const form = document.getElementById("form");
+
+    // Async function
+    async function getapi(url) {
+      let response = await fetch("http://httpbin.org/post");
+
+      let users = await response.json();
+      console.log(users);
+    }
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const prePayload = new FormData(form);
+      const payload = new URLSearchParams(prePayload);
+
+      console.log([...payload]);
+
+      fetch("http://httpbin.org/post", {
+        method: "POST",
+        body: payload,
+      })
+        .then((res) => res.json())
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    });
+
+    data = newdata;
+
+    function showArray() {
+      document.getElementById("users").innerHTML = newdata.join(",");
+    }
+
+    showArray();
+
+    //     // Function to define innerHTML for HTML table
+    //     function show(data) {
+    //       let tab = `<tr>
+    //           <th>Name</th>
+    //           <th>Office</th>
+    //           <th>Position</th>
+    //           <th>Salary</th>
+    //          </tr>`;
+
+    //       // Loop to access all rows
+    //       for (let r of data.list) {
+    //         tab += `<tr>
+    //     <td>${r.name} </td>
+    //     <td>${r.office}</td>
+    //     <td>${r.position}</td>
+    //     <td>${r.salary}</td>
+    // </tr>`;
+    //       }
+    //       // Setting innerHTML as tab variable
+    //       document.getElementById("users").innerHTML = tab;
+    //     }
+  </script>
+</body>
+{% endblock %}

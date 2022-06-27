@@ -60,6 +60,8 @@ phobbies = json.load(phobbies_file)
 def index():
     return render_template("index.html", title="Cyber Sapiens", url=os.getenv("URL"))
 
+# First timeline
+
 
 @ app.route("/timeline")
 def timeline():
@@ -91,6 +93,14 @@ def hobbiesp():
 @ app.route("/maps")
 def map():
     return render_template("maps.html", apikey=os.getenv("mapkey"))
+
+# Second Timeline
+
+
+@app.route("/timeline2")
+def timeline2():
+    return render_template("timeline2.html", title="Timeline 2")
+
 
 # Endpoint to retrieve timelineposts
 
