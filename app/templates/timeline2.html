@@ -8,8 +8,9 @@
 {% endblock %} {% block content %}
 <body>
   <form id="form">
-    <input name="username" type="text" />
-    <input name="password" type="password" />
+    <input name="name" type="text" />
+    <input name="email" type="text" />
+    <input name="content" type="text" />
     <button type="submit">Submit</button>
   </form>
   <h1 id="users"></h1>
@@ -19,37 +20,39 @@
     const form = document.getElementById("form");
 
     // Async function
-    async function getapi(url) {
-      let response = await fetch("http://httpbin.org/post");
+    async function getapi(url, body) {
+      let response = await fetch(url, {
+        method: "POST",
+        body,
+      });
 
       let users = await response.json();
-      console.log(users);
+      return users;
     }
 
-    form.addEventListener("submit", function (e) {
+    function showArray(newData) {
+      document.getElementById(
+        "users"
+      ).innerHTML = `${newData.name} - ${newData.email} - ${newData.content}`;
+    }
+
+    form.addEventListener("submit", async (e) => {
       e.preventDefault();
 
       const prePayload = new FormData(form);
       const payload = new URLSearchParams(prePayload);
-
-      console.log([...payload]);
-
-      fetch("http://httpbin.org/post", {
-        method: "POST",
-        body: payload,
-      })
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+      const newData = await getapi("/api/timeline_post", payload);
+      console.log(newData);
+      //   console.log([...payload]);
+      showArray(newData);
+      //   fetch("http://httpbin.org/post", {
+      //     method: "POST",
+      //     body: payload,
+      //   })
+      //     .then((res) => res.json())
+      //     .then((data) => console.log(data))
+      //     .catch((err) => console.log(err));
     });
-
-    data = newdata;
-
-    function showArray() {
-      document.getElementById("users").innerHTML = newdata.join(",");
-    }
-
-    showArray();
 
     //     // Function to define innerHTML for HTML table
     //     function show(data) {
