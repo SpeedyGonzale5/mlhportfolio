@@ -32,3 +32,5 @@ class TestTimelinePost(unittest.TestCase):
         assert all_posts[1].name == "John Doe"
         assert all_posts[1].content == "Hello world, I\'m John!"
         assert all_posts[1].email == "john@example.com"
+
+        assert len(list(all_posts)) == 2
