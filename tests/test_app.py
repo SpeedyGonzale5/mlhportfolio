@@ -19,6 +19,7 @@ class AppTestCase(unittest.TestCase):
         assert "Welcome to our portfolio" in html
         assert "Scroll through our website and witness what we've accomplished!" in html
         assert "Cras dui velit" in html
+        self.assertIsNotNone(html)
     
     def test_timeline(self):
         response = self.client.get("/api/timeline_post")
@@ -43,11 +44,12 @@ class AppTestCase(unittest.TestCase):
         response_3 = self.client.get("/timeline2")
         assert response_3.status_code == 200
         html = response_3.get_data(as_text=True)
-        assert "<input name=\"name\" type=\"text\" />" in html
+        assert "<input name=\"name\" type=\"text\"/>" in html
         assert "<input name=\"email\" type=\"text\" />" in html
         assert "<input name=\"content\" type=\"text\" />" in html
         assert "<button type=\"submit\">Submit</button>" in html
         assert "fetch" in html
+        self.assertIsNotNone(html)
 
     def test_malformed_timeline_post(self):
         #POST request missing name
