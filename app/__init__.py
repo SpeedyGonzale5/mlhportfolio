@@ -21,8 +21,6 @@ else:
                          port=3306
                          )
 
-error(mydb)
-
 
 class TimelinePost(Model):
     name = CharField()
@@ -123,7 +121,6 @@ def post_time_line_post():
     elif email == "" or email is None or "@" not in email:
         return "Invalid email", 400
     else:
-        error("made it to the end")
         timeline_post = TimelinePost.create(
             name=name, email=email, content=content)
         return model_to_dict(timeline_post)
