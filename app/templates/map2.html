@@ -1,0 +1,144 @@
+{% extends "base.html" %} {% block head %}
+<!-- Copied  from index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Home</title>
+
+    <!-- Link to styles of home section -->
+    <!-- <link
+      type="text/css"
+      href="{{url_for('static', filename='../static/styles/index.css')}}"
+      rel="stylesheet"
+    />
+     Link to styles of about us section -->
+    <!-- <link
+      type="text/css"
+      href="{{url_for('static', filename='../static/styles/about.css')}}"
+      rel="stylesheet"
+    /> -->
+
+    <!-- Nice Curves  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: "Prompt", sans-serif;
+        color: white;
+        background: #202731;
+        overflow-x: hidden;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding: 100px 20vw;
+      }
+
+      header {
+        grid-column: 2 / span 6;
+        font-size: 2.5rem;
+        padding: 2rem;
+      }
+
+      .blue {
+        background: #3c31dd;
+      }
+
+      .red {
+        background: #dd3f31;
+      }
+
+      .pink {
+        background: #ff0066;
+      }
+
+      .dark {
+        background: #0f0f10;
+      }
+
+      /* Curved bg with SVG via shape divider app */
+      .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .wave svg {
+        position: relative;
+        display: block;
+        width: calc(116% + 1.3px);
+        height: 129px;
+        transform: rotateY(180deg);
+      }
+
+      .wave .shape-fill {
+        fill: #202731;
+      }
+
+      /* SVG Background image via haikei.app */
+      .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .layer1 {
+        background-image: url("../static/svg/layer1.svg");
+      }
+
+      .layer2 {
+        background-image: url("../static/svg/layer2.svg");
+      }
+
+      .flip {
+        transform: rotate(180deg);
+      }
+
+      .blob-motion {
+        position: absolute;
+        transform: translateY(-20%);
+        z-index: 0;
+      }
+
+      .blob-content {
+        z-index: 1;
+      }
+
+      .blobs {
+        width: 100%;
+        background: url("../static/svg/blobs.svg") no-repeat bottom / cover;
+      }
+    </style>
+  </head>
+  {% endblock %} {% block content %}
+
+  <body>
+    <!-- Home page and video content -->
+
+    <header>
+      <h1>Hello there👋</h1>
+      <p>Welcome to my website!</p>
+    </header>
+  </body>
+  {% endblock %}
+</html>

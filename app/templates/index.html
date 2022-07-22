@@ -1,57 +1,263 @@
 {% extends "base.html" %} {% block head %}
-<title>Cyber Sapiens Home</title>
-<!-- Link to styles of home section -->
-<link
-  type="text/css"
-  href="{{url_for('static', filename='../static/styles/index.css')}}"
-  rel="stylesheet"
-/>
-<!-- Link to styles of about us section -->
-<link
-  type="text/css"
-  href="{{url_for('static', filename='../static/styles/about.css')}}"
-  rel="stylesheet"
-/>
-{% endblock %} {% block content %}
-<!-- Home page and video content -->
-<div class="hero-section">
-  <video autoplay muted loop playsinline preload="auto" class="video">
-    <source src="../static/vid/cyber.mp4" type="video/mp4" />
-  </video>
-  <div class="hero-wrapper">
-    <h1 class="hero-heading">{{title}}<br />3.0<br /></h1>
-    <p class="hero-paragraph">Welcome to our portfolio. (This is a test.)!!</p>
-  </div>
-</div>
+<!-- Copied  from index.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Home</title>
 
-<!-- About us section and gradient bar -->
-<div class="about-container">
-  <br />
-  <br />
+    <!-- Link to styles of home section -->
+    <!-- <link
+      type="text/css"
+      href="{{url_for('static', filename='../static/styles/index.css')}}"
+      rel="stylesheet"
+    />
+     Link to styles of about us section -->
+    <!-- <link
+      type="text/css"
+      href="{{url_for('static', filename='../static/styles/about.css')}}"
+      rel="stylesheet"
+    /> -->
 
-  <h1 class="about-header">The story of how we ended up MLH fellows</h1>
+    <!-- Nice Curves  -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
 
-  <div class="about-accent"></div>
-  <p class="about-paragraph">
-    We are proficient in all aspects of development, from front-end to back-end.
-    Our experience ranges from machine learning to web development to DevOps.
-    <br />
-    <br />
-    In this portfolio, you will find an example of every project we've worked on
-    - from the small to the big ones. We hope that you enjoy scrolling through
-    it as much as we did while working on them!
-    <br />
-    <br />
-    Scroll through our website and witness what we've accomplished!
-  </p>
-  <!-- <div class="about-whitespace"></div> -->
-  <p class="about-whitespace-text">
-    Cras dui velit, sollicitudin sit amet dui id, lectus neque pharetra erat, id
-    commodo purus lorem id ex. Interdum et malesuada fames ac ante ipsum primis
-    in faucibus. Nam ac nisl nec ligula pellentesque sollicitudin lacus. Nulla
-    feugiat vitae ipsum ac facilisis.
-  </p>
-  <div class="about-gradient"></div>
-</div>
+    <script src="https://cdn.jsdelivr.net/npm/kute.js@2.1.2/dist/kute.min.js"></script>
 
-{% endblock %}
+    <style>
+      body {
+        margin: 0;
+        font-family: "Prompt", sans-serif;
+        color: white;
+        background: #202731;
+        overflow-x: hidden;
+      }
+
+      section {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 400px;
+        padding: 100px 20vw;
+      }
+
+      header {
+        grid-column: 2 / span 6;
+        font-size: 2.5rem;
+        padding: 2rem;
+      }
+
+      .blue {
+        background: #3c31dd;
+      }
+
+      .red {
+        background: #dd3f31;
+      }
+
+      .pink {
+        background: #ff0066;
+      }
+
+      .dark {
+        background: #0f0f10;
+      }
+
+      /* Curved bg with SVG via shape divider app */
+      .wave {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        overflow: hidden;
+        line-height: 0;
+      }
+
+      .wave svg {
+        position: relative;
+        display: block;
+        width: calc(116% + 1.3px);
+        height: 129px;
+        transform: rotateY(180deg);
+      }
+
+      .wave .shape-fill {
+        fill: #202731;
+      }
+
+      /* SVG Background image via haikei.app */
+      .spacer {
+        aspect-ratio: 960/300;
+        width: 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+      }
+
+      .layer1 {
+        background-image: url("../static/svg/layer1.svg");
+      }
+
+      .layer2 {
+        background-image: url("../static/svg/layer2.svg");
+      }
+
+      .flip {
+        transform: rotate(180deg);
+      }
+
+      .blob-motion {
+        position: absolute;
+        transform: translateY(-20%);
+        z-index: 0;
+      }
+
+      .blob-content {
+        z-index: 1;
+      }
+
+      .blobs {
+        width: 100%;
+        background: url("../static/svg/blobs.svg") no-repeat bottom / cover;
+      }
+    </style>
+  </head>
+  {% endblock %} {% block content %}
+
+  <body>
+    <!-- Home page and video content -->
+    <section class="blue">
+      <header>
+        <h1>Hello there👋</h1>
+        <p>Welcome to my website!</p>
+      </header>
+    </section>
+    <div class="spacer layer1"></div>
+
+    <section>
+      <h1>Full Stack Developer</h1>
+      <p>
+        I am a full stack developer with a background in visual design, 3D
+        modeling, and illustration. I am passionate about creating great digital
+        products. I am able to work with a wide range of medias, delivering
+        creative and innovative design solutions across all touch-points to
+        enhance user experience.
+      </p>
+    </section>
+    <section class="red">
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <h1>Nice Curves</h1>
+      <p>
+        Id similique sed officia ut corporis quo repudiandae repellendus
+        distinctio ipsa inventore. Delectus amet vel illum ipsa consequatur
+        repellendus, et nulla ullam, perferendis blanditiis explicabo
+        architecto, perspiciatis aliquam quibusdam deserunt.
+      </p>
+
+      <div class="wave">
+        <svg
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+        >
+          <path
+            d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+            class="shape-fill"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <div class="spacer layer2"></div>
+
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Voluptatem fugiat doloremque fuga fugit quo odit laboriosam ab accusamus
+        quis facilis quibusdam eius, a, labore error ut dolores voluptates.
+        Culpa placeat esse maxime. Voluptates ipsa optio blanditiis ipsum
+        perferendis.
+      </p>
+    </section>
+
+    <!-- Section with blob  -->
+    <div class="spacer layer1 flip"></div>
+    <section class="blue">
+      <div class="blob-content">
+        <h1>Nice Curves</h1>
+        <p>
+          Labore molestias quis vitae iusto consequuntur consequatur totam
+          excepturi atque ipsum temporibus consectetur hic rerum perspiciatis
+          error nihil provident aliquid officia exercitationem numquam
+          doloremque, delectus aperiam enim soluta id. Nihil.
+        </p>
+      </div>
+      <svg
+        class="blob-motion"
+        id="visual"
+        viewBox="0 0 960 300"
+        width="960"
+        height="300"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        version="1.1"
+      >
+        <g transform="translate(481.8409079573494 125.54061991303797)">
+          <path
+            id="blob1"
+            d="M59.4 -48.5C83.4 -35.4 113.7 -17.7 116.5 2.8C119.3 23.3 94.7 46.7 70.7 71.7C46.7 96.7 23.3 123.3 -0.1 123.5C-23.6 123.6 -47.1 97.1 -71.3 72.1C-95.5 47.1 -120.2 23.6 -120.4 -0.1C-120.5 -23.8 -95.9 -47.6 -71.8 -60.8C-47.6 -73.9 -23.8 -76.5 -3.1 -73.4C17.7 -70.3 35.4 -61.7 59.4 -48.5"
+            fill="#0d00c7"
+          ></path>
+        </g>
+        <g
+          transform="translate(498.59227533591235 155.8553019893289)"
+          style="visibility: hidden"
+        >
+          <path
+            id="blob2"
+            d="M55.5 -63.1C69 -42 75 -21 80 5.1C85.1 31.1 89.2 62.2 75.7 77.9C62.2 93.6 31.1 93.8 2.8 91C-25.5 88.1 -50.9 82.2 -75.9 66.6C-100.9 50.9 -125.5 25.5 -121.6 3.9C-117.7 -17.7 -85.4 -35.4 -60.4 -56.5C-35.4 -77.7 -17.7 -102.3 1.6 -104C21 -105.6 42 -84.3 55.5 -63.1"
+            fill="#0d00c7"
+          ></path>
+        </g>
+      </svg>
+
+      <script>
+        const tween = KUTE.fromTo(
+          "#blob1",
+          { path: "#blob1" },
+          { path: "#blob2" },
+          { repeat: 999, duration: 3000, yoyo: true }
+        );
+
+        tween.start();
+      </script>
+    </section>
+    <div class="spacer layer1"></div>
+
+    <section>
+      <h1>Nice Curves</h1>
+      <p>
+        Voluptates eius deserunt cum! Inventore voluptates fugit rerum quaerat
+        ab officiis nam consectetur, enim repellat aspernatur id qui beatae
+        laudantium ex magni vel eaque itaque, odit libero error optio. Sapiente.
+      </p>
+    </section>
+  </body>
+  {% endblock %}
+</html>
