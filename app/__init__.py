@@ -63,6 +63,11 @@ phobbies = json.load(phobbies_file)
 def index():
     return render_template("index.html", title="Cyber Sapiens", url=os.getenv("URL"))
 
+
+@app.route("/home2")
+def home2():
+    return render_template("home2.html", title="New Homepage")
+
 # First timeline
 
 
