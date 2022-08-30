@@ -5,6 +5,10 @@ body {
     flex-direction: column;
     }
 
+a {
+  color: #fff;
+}
+
   .hero-section {
     display: flex;
     height: 100vh;
